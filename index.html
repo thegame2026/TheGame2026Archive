@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100b0b">
+  <meta name="description" content="The Game 2026 private project archive">
+  <title>The Game 2026 | Archive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="#" class="brand" data-page="home">
+        <span class="brand-mark">TG</span>
+        <span>
+          <strong>THE GAME</strong>
+          <small>2026 ARCHIVE</small>
+        </span>
+      </a>
+
+      <button class="primary-button full-width" id="addEntryButton">
+        <span>+</span> New entry
+      </button>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="home"><span>⌂</span> Overview</button>
+        <button class="nav-item" data-page="all"><span>▤</span> All entries</button>
+        <button class="nav-item" data-page="people"><span>♙</span> People</button>
+        <button class="nav-item" data-page="builds"><span>⌂</span> Builds & locations</button>
+        <button class="nav-item" data-page="lore"><span>◈</span> Lore & story</button>
+        <button class="nav-item" data-page="events"><span>◇</span> Quests & events</button>
+        <button class="nav-item" data-page="technical"><span>⌘</span> Technical notes</button>
+        <button class="nav-item" data-page="archive"><span>▧</span> Archive & misc.</button>
+        <button class="nav-item" data-page="favorites"><span>☆</span> Favorites</button>
+      </nav>
+
+      <div class="nav-label category-heading">
+        <span>CUSTOM CATEGORIES</span>
+        <button id="manageCategoriesButton" title="Manage categories">+</button>
+      </div>
+      <nav id="customNav"></nav>
+
+      <div class="sidebar-bottom">
+        <div class="local-status"><span></span> Stored in this browser</div>
+        <button class="nav-item" id="exportButton"><span>⇩</span> Export backup</button>
+        <button class="nav-item" id="importButton"><span>⇧</span> Import backup</button>
+        <input id="importFile" type="file" accept=".json,application/json" hidden>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span>THE GAME 2026</span>
+          <span class="breadcrumb-divider">/</span>
+          <strong id="breadcrumbCurrent">Overview</strong>
+        </div>
+        <div class="topbar-actions">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Search the archive..." autocomplete="off">
+            <kbd>SEARCH</kbd>
+          </label>
+        </div>
+      </header>
+
+      <section id="content" class="content" aria-live="polite"></section>
+
+      <footer class="footer">
+        <span>THE GAME 2026 · PRIVATE ARCHIVE</span>
+        <span>Keep the knowledge. Preserve the story.</span>
+      </footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
